@@ -34,7 +34,6 @@
     <!--
       - #SIDEBAR
     -->
-  <div class="wrapper" id="wrapper"></div>
 
     <aside class="sidebar" data-sidebar>
       <button class="form-btn" id="downloadBtn" type="submit" data-form-btn style="margin-bottom: 20px">
@@ -1212,35 +1211,6 @@ gateway), , HTML, CSS, Jquery
       document.body.removeChild(link);
     });
   </script>
-  <script>
-  const wrapper = document.getElementById('wrapper');
-  const columnsCount = 80;
-  const spansPerColumn = 50;
-
-  for(let col = 1; col <= columnsCount; col++) {
-    const column = document.createElement('div');
-    column.classList.add('column', `col-${col}`);
-
-    // Random animation duration for this column between ~1 and ~5 seconds
-    const duration = (Math.random() * 4 + 1).toFixed(2);
-
-    for(let i = 1; i <= spansPerColumn; i++) {
-      const span = document.createElement('span');
-      span.textContent = `\u0023${Math.floor(Math.random() * 9000 + 1000)}`; // random hex code, just for effect
-
-      // Delay staggered by index i, smaller delay so full cycle completes in duration
-      const delay = (i * (duration / spansPerColumn)).toFixed(2);
-
-      // Set CSS variables for animation duration and delay
-      span.style.setProperty('--duration', duration + 's');
-      span.style.setProperty('--delay', delay + 's');
-
-      column.appendChild(span);
-    }
-
-    wrapper.appendChild(column);
-  }
-</script>
 </body>
 
 </html>
