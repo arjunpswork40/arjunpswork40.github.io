@@ -158,7 +158,19 @@ html { font-family: var(--ff-poppins); }
 body { background: var(--smoky-black); }
 
 
+@keyframes colorPulse {
+    0%   { color: #b3ffb3; }  /* lighten green ~70% */
+    40%  { color: #008000; }  /* green */
+    50%  { color: #006600; }  /* darken green ~5% */
+    100% { color: #004d00; }  /* darken green ~20% */
+  }
 
+  :root {
+    background: black;
+    color: #004d00;
+    font-size: 3em;
+    font-family: monospace;
+  }
 
 
 /*-----------------------------------*\
@@ -1761,7 +1773,31 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 }
 
+ .wrapper {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    text-align: center;
+    width: 100vw;
+  }
 
+  .column {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .column span {
+    display: block;
+    padding: 0 0.125em;
+    animation-name: colorPulse;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: var(--duration, 3s);
+    animation-delay: var(--delay, 0s);
+  }
 
 
 
