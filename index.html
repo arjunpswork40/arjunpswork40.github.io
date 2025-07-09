@@ -34,7 +34,7 @@
     <!--
       - #SIDEBAR
     -->
-
+<div class="rain" id="rain"></div>
     <aside class="sidebar" data-sidebar>
       <button class="form-btn" id="downloadBtn" type="submit" data-form-btn style="margin-bottom: 20px">
         <ion-icon name="download-outline"></ion-icon>
@@ -1211,6 +1211,32 @@ gateway), , HTML, CSS, Jquery
       document.body.removeChild(link);
     });
   </script>
+  <script>
+  const rain = document.getElementById('rain');
+  const dropsCount = 500;
+
+  for (let i = 0; i < dropsCount; i++) {
+    const drop = document.createElement('div');
+    drop.className = 'drop';
+
+    // Randomize properties
+    const opacity = (Math.random() * 0.9 + 0.1).toFixed(2);
+    const left = (Math.random() * 120).toFixed(2); // vw
+    const width = (Math.random() * 0.8 + 0.1).toFixed(2); // vmin
+    const duration = (Math.random() * 2 + 0.5).toFixed(2) + 's';
+    const delay = (-Math.random() * 10).toFixed(2) + 's'; // negative to start randomly
+    const angle = 91; // fixed, or random between 75 and 105 deg for wind effect
+
+    drop.style.setProperty('--opacity', opacity);
+    drop.style.left = left + 'vw';
+    drop.style.setProperty('--width', width + 'vmin');
+    drop.style.animationDuration = duration;
+    drop.style.animationDelay = delay;
+    drop.style.setProperty('--angle', angle + 'deg');
+
+    rain.appendChild(drop);
+  }
+</script>
 </body>
 
 </html>
