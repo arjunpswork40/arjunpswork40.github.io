@@ -1192,7 +1192,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   justify-content: center;
   align-items: center;
   gap: 10px;
-  padding: 13px 20px;
+  padding: 8px 9px;
   border-radius: 14px;
   font-size: var(--fs-6);
   text-transform: capitalize;
@@ -1539,7 +1539,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .form-btn {
     --fs-6: 16px;
-    padding: 16px 20px;
+    padding: 8px 9px;
   }
 
   .form-btn ion-icon { font-size: 18px; }
