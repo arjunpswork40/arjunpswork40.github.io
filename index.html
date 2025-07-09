@@ -36,7 +36,7 @@
     -->
 
     <aside class="sidebar" data-sidebar>
-      <button class="form-btn" type="submit" data-form-btn style="margin-bottom: 20px">
+      <button class="form-btn" id="downloadBtn" type="submit" data-form-btn style="margin-bottom: 20px">
         <ion-icon name="download-outline"></ion-icon>
         <span>Download Resume</span>
       </button>
@@ -1195,6 +1195,20 @@ gateway), , HTML, CSS, Jquery
         },
         error: function (err) { },
       });
+    });
+  </script>
+  <script>
+    document.getElementById('downloadBtn').addEventListener('click', () => {
+      // Path to the file inside the assets folder
+      const filePath = 'assets/docs/ArjunPS2025Latest.pdf'; // adjust file name/extension as needed
+
+      // Create a temporary anchor to trigger the download
+      const link = document.createElement('a');
+      link.href = filePath;
+      link.download = 'ArjunPS2025Latest.pdf'; // this is the suggested name
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     });
   </script>
 </body>
